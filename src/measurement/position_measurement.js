@@ -30,7 +30,8 @@ export function displayWidth(cm) {
   return cm.display.scroller.clientWidth - scrollGap(cm) - cm.display.barWidth
 }
 export function displayHeight(cm) {
-  return cm.display.scroller.clientHeight - scrollGap(cm) - cm.display.barHeight
+  var scrollGapY = scrollerGap - (cm.display.scroller.offsetHeight - cm.display.scroller.clientHeight)
+  return cm.display.scroller.clientHeight - scrollGapY - cm.display.barHeight
 }
 
 // Ensure the lineView.wrapping.heights array is populated. This is
